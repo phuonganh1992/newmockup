@@ -8,12 +8,12 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.time.Instant;
 
-@Data
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class EWalletView {
+public class UserView {
     @Schema(description = "Số ví")
     @Pattern(regexp = "^WID-.{21}$")
     private String id;
@@ -44,5 +44,5 @@ public class EWalletView {
     private Long balance;
 
     @Schema(description = "Trạng thái ví của khách: Đã phát hành / Issued, Đã kích hoạt / Verified , Đang hoạt động / Active")
-    private String status;
+    private String state;
 }

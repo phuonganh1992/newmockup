@@ -1,12 +1,14 @@
 package com.example.newmockup.model.view;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import java.math.BigInteger;
 import java.time.Instant;
 
-@Data
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -14,17 +16,7 @@ import java.time.Instant;
 public class TransactionReportView {
     @Schema(description = "Ngày giao dịch")
     private Instant transactionDate;
-    private BigInteger depositQuantity;
-    private BigInteger depositAmount;
-    private BigInteger withdrawQuantity;
-    private BigInteger withdrawAmount;
-    private BigInteger purchaseQuantity;
-    private BigInteger purchaseAmount;
-    private BigInteger onepayTransferQuantity;
-    private BigInteger onepayTransferAmount;
-    private BigInteger bankTransferQuantity;
-    private BigInteger bankTransferAmount;
 
-
-
+    @Schema(description = "Tổng số lượng giao dịch, tổng giá trị giao dịch theo từng loại giao dịch")
+    private TransactionByType transactionByType;
 }

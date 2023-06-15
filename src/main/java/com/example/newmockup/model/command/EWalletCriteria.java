@@ -42,16 +42,5 @@ public class EWalletCriteria extends DefaultCriteria {
     private String phoneNumber;
 
     @Schema(description = "Trạng thái ví khách hàng")
-    @NotEmpty
-    private List<String> statusCode;
-
-//    @Schema(description = "Số lượng hiển thị bản ghi tối đa trên 1 trang")
-//    @NotNull
-//    private Integer size;
-//
-//    @Schema(description = "Số trang")
-//    private Integer page;
-//
-//    @Schema(description = "Sắp xếp, mặc định sort by fullName theo thứ tự từ A-Z")
-//    private String sort;
+    private List<String> states;
 }

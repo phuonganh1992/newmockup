@@ -1,6 +1,6 @@
 package com.example.newmockup.domain;
 
-public class Status {
+public class State {
     private String id;
     private String code;
     private String name;

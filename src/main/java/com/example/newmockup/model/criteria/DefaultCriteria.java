@@ -9,7 +9,6 @@ import javax.validation.constraints.NotNull;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
 public class DefaultCriteria {
     @Schema(description = "Số lượng hiển thị bản ghi tối đa trên 1 trang")
     @NotNull
@@ -18,6 +17,6 @@ public class DefaultCriteria {
     @Schema(description = "Số trang")
     private Integer page;
 
-    @Schema(description = "Sắp xếp, mặc định sort by fullName theo thứ tự từ A-Z")
+    @Schema(description = "Sắp xếp")
     private String sort;
 }
