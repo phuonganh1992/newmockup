@@ -17,6 +17,6 @@ public class DefaultCriteria {
     @Schema(description = "Số trang")
     private Integer page;
 
-    @Schema(description = "Sắp xếp")
+    @Schema(description = "Sắp xếp, ex: sort=fullName:desc")
     private String sort;
 }
