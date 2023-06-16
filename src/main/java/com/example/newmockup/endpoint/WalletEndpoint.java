@@ -31,7 +31,7 @@ public class WalletEndpoint {
     }
 
     @Operation(description = "Download danh sách ví")
-    @PostMapping("/download")
+    @PostMapping("/download/file")
     public ResponseEntity<InputStreamResource> downloadReport(@RequestBody EWalletCriteria criteria){
         byte[] bytes = new byte[100000000];
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(bytes);
@@ -57,7 +57,7 @@ public class WalletEndpoint {
         return ResponseEntity.ok(new ItemSearchView<TransactionReportView>());
     }
     @Operation(description = "Download báo cáo giao dịch")
-    @PostMapping("/transactions/download")
+    @PostMapping("/transactions/download/file")
     public ResponseEntity<InputStreamResource> downloadReportTransaction(@RequestBody TransactionCriteria criteria){
         byte[] bytes = new byte[100000000];
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(bytes);
@@ -76,7 +76,7 @@ public class WalletEndpoint {
         return ResponseEntity.ok(new ItemSearchView<CustomerReportView>());
     }
     @Operation(description = "Download báo cáo khách hàng cá nhân")
-    @PostMapping("/customers/download")
+    @PostMapping("/customers/download/file")
     public ResponseEntity<InputStreamResource> downloadReportCustomer(@RequestBody CustomerCriteria criteria){
         byte[] bytes = new byte[100000000];
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(bytes);
