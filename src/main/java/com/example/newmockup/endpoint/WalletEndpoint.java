@@ -18,10 +18,16 @@ import java.io.ByteArrayInputStream;
 @RestController
 @RequestMapping("/api/wallets")
 public class WalletEndpoint {
+    @Operation(description = "Báo cáo tổng quan")
+    @GetMapping("/summary")
+    public ResponseEntity<SummaryView> summary(TransactionCriteria criteria) {
+        return ResponseEntity.ok(new SummaryView());
+    }
+
     @Operation(description = "Báo cáo danh sách ví")
     @GetMapping("")
-    public ResponseEntity<ItemSearchView<UserView>> filter(EWalletCriteria criteria) {
-        return ResponseEntity.ok(new ItemSearchView());
+    public ResponseEntity<UserSearchView> filter(EWalletCriteria criteria) {
+        return ResponseEntity.ok(new UserSearchView());
     }
 
     @Operation(description = "Download danh sách ví")
@@ -42,13 +48,13 @@ public class WalletEndpoint {
     @Parameter(name = "id", description = "Id của ví")
     @GetMapping("/{id}")
     public ResponseEntity<ItemSearchView<UserDetailView>> findById(@PathVariable("id") String id , CustomerCriteria criteria) {
-        return ResponseEntity.ok(new ItemSearchView());
+        return ResponseEntity.ok(new ItemSearchView<UserDetailView>());
     }
 
     @Operation(description = "Báo cáo giao dịch")
     @GetMapping("/transactions")
     public ResponseEntity<ItemSearchView<TransactionReportView>> filterTransaction(TransactionCriteria command) {
-        return ResponseEntity.ok(new ItemSearchView());
+        return ResponseEntity.ok(new ItemSearchView<TransactionReportView>());
     }
     @Operation(description = "Download báo cáo giao dịch")
     @PostMapping("/transactions/download")
@@ -67,7 +73,7 @@ public class WalletEndpoint {
     @Operation(description = "Báo cáo khách hàng cá nhân")
     @GetMapping("/customers")
     public ResponseEntity<ItemSearchView<CustomerReportView>> filterCustomer(CustomerCriteria criteria) {
-        return ResponseEntity.ok(new ItemSearchView());
+        return ResponseEntity.ok(new ItemSearchView<CustomerReportView>());
     }
     @Operation(description = "Download báo cáo khách hàng cá nhân")
     @PostMapping("/customers/download")
