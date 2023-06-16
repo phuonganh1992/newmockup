@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.Instant;
+import java.util.List;
 
 
 @Getter
@@ -18,5 +19,5 @@ public class TransactionReportView {
     private Instant transactionDate;
 
     @Schema(description = "Tổng số lượng giao dịch, tổng giá trị giao dịch theo từng loại giao dịch")
-    private TransactionByType transactionByType;
+    private List<TransactionByType> transactionByTypes;
 }
