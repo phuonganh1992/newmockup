@@ -16,7 +16,7 @@ import java.io.ByteArrayInputStream;
 
 
 @RestController
-@RequestMapping("/api/wallets")
+@RequestMapping("/api/e-wallets")
 public class WalletEndpoint {
     @Operation(description = "Báo cáo tổng quan")
     @GetMapping("/summary")

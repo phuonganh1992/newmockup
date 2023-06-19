@@ -16,5 +16,5 @@ public class ItemSearchView<T> {
     private List<T> list;
 
     @Schema(description = "Tổng số lượng bản ghi tìm kiếm")
-    private Long total;
+    private Long totalItems;
 }
